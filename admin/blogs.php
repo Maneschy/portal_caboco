@@ -10,7 +10,7 @@
 <section id="main-content">
     <section class="wrapper">
 
-        <div class="col-lg-8">
+        <div class="col-lg-10">
             
                <?php
             if (isset($_GET['respt'])) {
