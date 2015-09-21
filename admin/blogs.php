@@ -39,7 +39,7 @@
 						                        
 						<div class="form-group col-sm-12">						    <label for="exampleInputEmail1">NOME DO BLOG</label>						    <input tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" name="nome_blog" type="text" class="form-control" data-placement="top">						</div>
 
-                        <div class="form-group col-sm-12">
+                                                <div class="form-group col-sm-12">
                             <label for="exampleInputEmail1">TÍTULO</label>
                             <input tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" name="nome_autor_blog" type="text" class="form-control" data-placement="top">
                         </div>
@@ -49,7 +49,7 @@
                             <label for="exampleInputEmail1">Link do Blog</label>
                             <input name="link_blog" id="link" tooltip="Colque aqui o link do BLOG" type="text" class="form-control" value="http://">
 
-                        </div>
+                        </div>                        
 
 
  						<div class="form-group col-sm-12">

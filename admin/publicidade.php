@@ -1,11 +1,4 @@
-<?php
-session_start();
-if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == true)) {
-    unset($_SESSION['usuario']);
-    unset($_SESSION['senha']);
-    header('location:index.php');
-}
-?>
+
 
 <!--header end-->
 <?php include './header.php'; ?>
@@ -21,7 +14,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 
 
 
-        <div class="col-lg-8">
+        <div class="col-lg-12">
 
 
             <?php
