@@ -10,7 +10,7 @@
 <section id="main-content">
     <section class="wrapper">
 
-        <div class="col-lg-6">
+        <div class="col-lg-8">
             
                <?php
             if (isset($_GET['respt'])) {
@@ -62,7 +62,7 @@
                             	<div class="col-md-4">
 	                            	<div class="fileupload fileupload-new" data-provides="fileupload">
                                     	<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                        	<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
+                                        	<img src="img/sem-imagem.png" alt="" />
                                         </div>
                                         <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
                                         <div>

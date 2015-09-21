@@ -1,10 +1,10 @@
 /*anchor*/
 a {
-    color: #667fa0;
+    color: #CE8611;
 }
 
 a:hover {
-    color: #2A3542;
+    color: #312A1F;
 }
 
 /*panel*/
@@ -96,7 +96,7 @@ a:hover {
 }
 
 .modal-header {
-    background: #00A8B3;
+    background: #CE8611;
     color: #fff;
     border-radius: 5px 5px 0 0;
     -webkit-border-radius: 5px 5px 0 0;

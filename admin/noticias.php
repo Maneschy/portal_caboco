@@ -10,7 +10,7 @@
 <section id="main-content">
     <section class="wrapper">
 
-        <div class="col-lg-6">
+        <div class="col-lg-8">
             
                <?php
             if (isset($_GET['respt'])) {
@@ -62,7 +62,7 @@
 
                             <div class=" col-sm-9">
                                 <label for="exampleInputEmail1">TEXTO DO DETALHE (não é obrigatório)</label>
-                                <textarea name="texto_detalhe"  tooltip="se você deseja um destaque no texto, digite aqui. máx 100 caracteres" name="" id="" class="form-control" rows="7" style="border-left: 5px solid #335397;"></textarea>
+                                <textarea name="texto_detalhe"  tooltip="se você deseja um destaque no texto, digite aqui. máx 100 caracteres" name="" id="" class="form-control" rows="7" style="border-left: 5px solid #CE8611;"></textarea>
                             </div>
 
                         </div>
@@ -71,13 +71,13 @@
  							<hr/>
 						</div>
 						
-                        <div class="form-group col-sm-12 foto">
+                        <div class="form-group col-sm-12">
                         	<label class="col-sm-3">usar imagens com tam. padrão 627x422px</label>
-							<div class="form-group">
+							<div class="form-group">							
                             	<div class="col-md-4">
 	                            	<div class="fileupload fileupload-new" data-provides="fileupload">
                                     	<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                        	<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
+                                        	<img src="img/sem-imagem.png" alt="" />
                                         </div>
                                         <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
                                         <div>
@@ -89,9 +89,9 @@
                                             <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> excluir</a>
                                         </div>
                                     </div>
-                          		</div>                                <div class="col-sm-5">                                    <label for="exampleInputEmail1">LEGENDA DA FOTO</label>                                    <textarea name="texto" id="" class="form-control" rows="3"></textarea>                                </div>
+                          		</div>                          		                                <div class="col-sm-5">                                    <label for="exampleInputEmail1">LEGENDA DA FOTO</label>                                    <textarea name="texto" id="" class="form-control" rows="1"></textarea>                                   	<br/>                                    <label for="exampleInputEmail1">ALINHAMENTO DA FOTO</label>                                    <div class="radios">                                        <label class="label_radio" for="radio-01">                                            <input name="sample-radio" id="radio-01" value="1" type="radio" checked /><img src="img/ico-alinha-esquerda.png" width="50" style="margin-right: 10px;" alt="" /> Esquerda                                         </label>                                        <label class="label_radio" for="radio-02">                                            <input name="sample-radio" id="radio-02" value="1" type="radio" /><img src="img/ico-alinha-centro.png" width="50" style="margin-right: 10px;"  alt="" /> Centro                                        </label>                                        <label class="label_radio" for="radio-03">                                            <input name="sample-radio" id="radio-03" value="1" type="radio" /><img src="img/ico-alinha-direita.png" width="50" style="margin-right: 10px;"  alt="" /> Direita                                         </label>                                    </div>                                                                    </div>
                            	</div>
-                        </div>                                                <a href="#"><div class="col-sm-6">+ clique para adicionar mais fotos</div></a>                                                <div class="form-group col-sm-12">                        	<label for="exampleInputEmail1">TAGs</label>                                <input name="tagsinput" id="tagsinput" class="tagsinput" value="Flat,Design,Lab,Clean" />                                                    </div>
+                        </div>                                                <a href="#"><div class="col-sm-6">+ clique para adicionar mais fotos</div></a>                                                <div class="form-group col-sm-12">                        	<hr/>                        </div>                                                <div class="form-group col-sm-6">                            <label for="exampleInputEmail1">CÓDIGO DO VÍDEO NO YOUTUBE</label>                            <div class="input-group">                                <span class="input-group-addon">https://www.youtube.com/watch?v=</span>                                <input name="codigo" tooltip="Poste o vídeo no youtube, copie o código de 11 dígitos gerado no link do vídeo após o sinal de igual (=), conforme o modelo abaixo" type="text" name="codigo" class="form-control" placeholder="1xq0gD-DIoc">                            </div>                        </div>                                                <div class=" form-group col-sm-5">                            <label for="exampleInputEmail1">LEGENDA DO VÍDEO</label>                            <textarea name="texto" id="" class="form-control" rows="1"></textarea>                        </div>                                                <div class="form-group col-sm-12">                        <hr/>                        	<label for="exampleInputEmail1">TAGs</label>                            <input name="tagsinput" id="tagsinput" class="tagsinput" value="Notícia" />                                                    </div>
 
 						<div class="form-group col-sm-12">
                             	
@@ -133,6 +133,6 @@
 
 </section>
 
-   <!-- js placed at the end of the document so the pages load faster -->    <script src="js/jquery.js"></script>    <script src="js/bootstrap.min.js"></script>    <script src="js/jquery.scrollTo.min.js"></script>    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>    <script src="js/jquery-ui-1.9.2.custom.min.js"></script>    <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>  <!--custom switch-->  <script src="js/bootstrap-switch.js"></script>  <!--custom tagsinput-->  <script src="js/jquery.tagsinput.js"></script>  <!--custom checkbox & radio-->  <script type="text/javascript" src="js/ga.js"></script>  <script type="text/javascript" src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>  <script type="text/javascript" src="assets/bootstrap-daterangepicker/date.js"></script>  <script type="text/javascript" src="assets/bootstrap-daterangepicker/daterangepicker.js"></script>  <script type="text/javascript" src="assets/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>  <script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>  <script type="text/javascript" src="assets/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>  <script src="js/respond.min.js" ></script>  <!--common script for all pages-->    <script src="js/common-scripts.js"></script>  <!--script for this page-->  <script src="js/form-component.js"></script>
+<!-- js placed at the end of the document so the pages load faster --><script src="js/jquery.js"></script><script src="js/jquery-1.8.3.min.js"></script><script src="js/bootstrap.min.js"></script><script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script><script src="js/jquery.scrollTo.min.js"></script><script src="js/jquery.nicescroll.js" type="text/javascript"></script><script src="js/jquery.sparkline.js" type="text/javascript"></script><script src="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script><script src="js/owl.carousel.js" ></script><script src="js/jquery.customSelect.min.js" ></script><script src="js/respond.min.js" ></script>  <!--custom switch-->  <script src="js/bootstrap-switch.js"></script>  <!--custom tagsinput-->  <script src="js/jquery.tagsinput.js"></script>  <!--this page plugins-->      <!--this page plugins-->  <script type="text/javascript" src="assets/fuelux/js/spinner.min.js"></script>  <script type="text/javascript" src="assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>  <script type="text/javascript" src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>  <script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>  <!--common script for all pages-->    <script src="js/common-scripts.js"></script>    <!--this page  script only-->    <script src="js/advanced-form-components.js"></script>          <!--script for this page-->      <script src="js/form-component.js"></script>
 </body>
 </html>

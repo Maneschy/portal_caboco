@@ -3428,7 +3428,7 @@ table.sliders tr td {
 }
 .tagsinput .tag {
     border-radius: 4px;
-    background-color: #41cac0;
+    background-color: #F09F11;
     color: #ffffff;
     cursor: pointer;
     margin-right: 5px;
@@ -3448,7 +3448,7 @@ table.sliders tr td {
     -webkit-backface-visibility: hidden;
 }
 .tagsinput .tag:hover {
-    background-color: #39b1a8;
+    background-color: #CE8611;
     color: #ffffff;
     padding-left: 12px;
     padding-right: 20px;
@@ -3515,7 +3515,7 @@ table.sliders tr td {
     -webkit-backface-visibility: hidden;
 }
 .tagsinput-add:hover {
-    background-color: #3bb8af;
+    background-color: #CE8611;
 }
 .tagsinput-add:before {
     content: "\f067";
