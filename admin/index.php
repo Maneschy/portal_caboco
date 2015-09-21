@@ -56,8 +56,8 @@
 
 
 
-            <h2 class="form-signin-heading" style="background-color: #FFD31A;">
-                <img style="margin-left: 10px; margin-bottom: -20px;" src="img/arthur-bisneto-foto.png" height="80" alt="" />
+            <h2 class="form-signin-heading" style="background-image: url(img/bg-topo.png);">
+                <img style="margin-left: 10px; margin-bottom: -20px;" src="img/logo-coboco.png" height="80" alt="" />
             </h2>
             <div class="login-wrap">
                 <input type="text" name="usuario" class="form-control" placeholder="Usuário" autofocus>

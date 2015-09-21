@@ -20,7 +20,7 @@ include './conections/conexao.php';
         <!--external css-->
         <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
         <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
-        <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
+        <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">		<link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css" />        <link rel="stylesheet" type="text/css" href="assets/bootstrap-colorpicker/css/colorpicker.css" />        <link rel="stylesheet" type="text/css" href="assets/bootstrap-daterangepicker/daterangepicker.css" />        
         <!-- Custom styles for this template -->
         <link href="css/style.css" rel="stylesheet">
         <link href="css/style-responsive.css" rel="stylesheet" />
@@ -28,7 +28,7 @@ include './conections/conexao.php';
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
         <!--[if lt IE 9]>
           <script src="js/html5shiv.js"></script>
-          <script src="js/respond.min.js"></script>
+          <script src="js/respond.min.js"></script><!--custom tagsinput-->          <script src="js/jquery.tagsinput.js"></script>
         <![endif]-->
     </head>
 
@@ -41,8 +41,8 @@ include './conections/conexao.php';
                     <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Menu de navegação"></div>
                 </div>
                 <!--logo start-->
-                <a href="index.html" class="logo">
-                    <img style="margin-left: 10px; margin-bottom: -1px;" src="img/arthur-bisneto-foto.png" height="50" alt="" />
+                <a href="dashboard.php" class="logo">
+                    <img style="margin-left: 10px; margin-bottom: -1px;" src="img/logo-coboco.png" height="40" alt="" />
                 </a>
                 <!--logo end-->
                 <!--<div class="nav notify-row" id="top_menu">
