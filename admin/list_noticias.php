@@ -22,10 +22,12 @@
     <section id="main-content">
         <section class="wrapper site-min-height">
 
-            <h1 style="font-weight: 300;"><span class="fa fa-file-text-o"></span> INFORMATIVOS</h1>
+            <h1 style="font-weight: 300;"><span class="fa fa-list-alt"></span> NOTÍCIAS</h1>
             <hr style="border: 1px solid #333;">
             <div class="divider"></div>
             <div class="divider"></div>
+
+            </br>
 
             <?php
             if (isset($_GET['respt'])) {
@@ -37,7 +39,7 @@
                         <button data-dismiss="alert" class="close close-sm" type="button">
                             <i class="fa fa-times"></i>
                         </button>
-                        <strong>SUCESSO!</strong> Informativo excluido com sucesso!
+                        <strong>SUCESSO!</strong> Notícia excluida com sucesso!
                     </div>
                     <?php
                 }
@@ -51,8 +53,8 @@
                     <section class="panel">
 
                         <header class="panel-heading">
-                            <a href="informativo.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
-                                    </span> EDIÇÕES</button>
+                            <a href="noticias.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                                    </span> NOTÍCIAS</button>
                             </a>
                         </header>
 
@@ -61,8 +63,10 @@
                                 <table  class="display table table-bordered table-striped" id="example">
                                     <thead>
                                         <tr>
-                                            <th style="text-align: left;">Nº DA EDIÇÃO</th>
-                                            <th style="text-align: center;">POSTADO POR</th>
+                                            <th style="text-align: left;">TITULO DA NOTÍCIA</th>
+                                            <th style="text-align: center;">DATA</th>                                            <th style="text-align: center;">EDITORIA</th>
+                                            <th style="text-align: center;">NO AR?</th>
+                                            <th style="text-align: center;">DESTAQUE</th>                                            <th style="text-align: center;">POSTADO POR</th>
                                             <th style="text-align: center;">EDITAR</th>
                                             <th style="text-align: center;">EXCLUIR</th>
 
@@ -72,31 +76,58 @@
 
 
                                         <?php
-                                        $seleciona = "SELECT * FROM informativo INNER JOIN usuario ON informativo.usuario_id = usuario.usuario_id";
+                                        $seleciona = "SELECT * FROM noticia INNER JOIN
+                                                      usuario ON noticia.usuario_id = usuario.usuario_id";
 
                                         $seleciona_executa = mysql_query($seleciona)or die(mysql_error());
 
-                                        while ($array_dados = mysql_fetch_array($seleciona_executa)) {
+                                        while ($dados_array = mysql_fetch_array($seleciona_executa)) {
                                             ?>
 
-
                                             <tr class="gradeA" style="text-align: center;">
-                                                <td style="text-align: left;"><?php echo $array_dados['edicao']; ?></td>
-                                                <td><?php echo $array_dados['nome']; ?></td>
+                                                <td style="text-align: left;"><?php echo $dados_array['titulo']; ?></td>
+                                                <td><?php echo $dados_array['data_noticia']; ?></td>                                                <td>NOTÍCIA</td>
+                                                <td>
 
+                                                    <?php
+                                                    if ($dados_array['publicar'] == 1) {
+                                                        ?>
+                                                        <img src="img/sim.png" alt="">
+                                                        <?php
+                                                    } else {
+                                                        ?>
+                                                        <img src="img/nao.png" alt="">
+                                                        <?php
+                                                    }
+                                                    ?>
+
+                                                </td>
+
+                                                <td>
+                                                    <?php
+                                                    if ($dados_array['destaque_banner'] == 1) {
+                                                        ?>
+                                                        <img src="img/sim.png" alt="">
+                                                        <?php
+                                                    } else {
+                                                        ?>
+                                                        <img src="img/nao.png" alt="">
+                                                        <?php
+                                                    }
+                                                    ?>
+
+
+                                                </td>                                                <td><?php echo $dados_array['nome']; ?></td>
                                                 <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
-                                                <td><a href="php/exclui_informativo.php?id=<?php echo $array_dados['informativo_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
+                                                <td><a href="php/exclui_noticia.php?id=<?php echo $dados_array['noticia_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
                                             </tr>
-
 
                                             <?php
                                         }
                                         ?>
 
-
-
-
                                     </tbody>
+
 
                                 </table>
                             </div>

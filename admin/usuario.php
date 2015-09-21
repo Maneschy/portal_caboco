@@ -9,9 +9,9 @@
 <section id="main-content">
     <section class="wrapper">
 
-        <div class="col-lg-6">
+        <div class="col-lg-7">
             <section class="panel">
-                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> CADASTRO </strong></div>
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> CADASTRO DE USUÁRIOS</strong></div>
                 <div class="panel-body">
 
                     <form name="form_signup" class="form-horizontal form-validation" data-ng-submit="submitForm()" action="#" method="POST">
@@ -98,9 +98,6 @@
                         <div class="callout callout-info">
                             <p>O botão estará ativo quando todos os campos estiverem preenchidos corretamente.</p>
                         </div>
-
-                        <div class="divider"></div>
-                        <div class="alert alert-info" data-ng-show="showInfoOnSubmit">cadastro efetuado com sucesso!</div>                 
 
                     </form>
 

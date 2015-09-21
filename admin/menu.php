@@ -4,14 +4,14 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
             <li>
-                <a href="index.html">
+                <a href="dashboard.php">
                     <i class="fa fa-dashboard"></i>
                     <span>Dashboard</span>
                 </a>
-            </li>						<li>			    <a  href="editorias.php">			        <i class="fa fa-camera-retro"></i>			        <span>Editorias</span>			    </a>			</li>						<li>			    <a  href="noticias.php">			        <i class="fa fa-list-alt "></i>			        <span>Notícias</span>			    </a>			</li>						
+            </li>						<li>			    <a  href="list_editorias.php">			        <i class="fa fa-camera-retro"></i>			        <span>Sub-editorias</span>			    </a>			</li>						<li>			    <a  href="list_noticias.php">			        <i class="fa fa-list-alt "></i>			        <span>Notícias</span>			    </a>			</li>						
             <li>
-                <a href="blogs.php">
-                    <i class="fa fa-book"></i>
+                <a href="list_blogs.php">
+                    <i class="fa fa-comments"></i>
                     <span>Blogs</span>
                 </a>
             </li>
@@ -22,14 +22,14 @@
                     <span>Multimidia</span>
                 </a>
                 <ul class="sub">
-                    <li><a style="background: none;" href="fotos.php"><i class="fa fa-camera"></i>galeria de fotos</a></li>
-                    <li><a style="background: none;" href="videos.php"><i class="fa fa-video-camera"></i>vídeos</a></li>
+                    <li><a style="background: none;" href="list_fotos.php"><i class="fa fa-camera"></i>galeria de fotos</a></li>
+                    <li><a style="background: none;" href="list_videos.php"><i class="fa fa-video-camera"></i>vídeos</a></li>
                 </ul>
             </li>
 
 
             <li>
-                <a  href="publicidade.php">
+                <a  href="list_publicidade.php">
                     <i class="fa fa-bullhorn"></i>
                     <span>Publicidade</span>
                 </a>

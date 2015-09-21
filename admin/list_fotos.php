@@ -37,13 +37,12 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
     <section id="main-content">
         <section class="wrapper site-min-height">
 
-            <h1 style="font-weight: 300;"><span class="fa fa-picture-o"></span> BANNERS</h1>
+            <h1 style="font-weight: 300;"><span class="fa fa-video-camera"></span> ALBUNS DE FOTO</h1>
             <hr style="border: 1px solid #333;">
             <div class="divider"></div>
             <div class="divider"></div>
 
             </br>
-
             <?php
             if (isset($_GET['respt'])) {
 
@@ -54,7 +53,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                         <button data-dismiss="alert" class="close close-sm" type="button">
                             <i class="fa fa-times"></i>
                         </button>
-                        <strong>SUCESSO!</strong> Banner excluido com sucesso!
+                        <strong>SUCESSO!</strong> Foto excluída com sucesso!
                     </div>
                     <?php
                 }
@@ -69,10 +68,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 
                     <section class="panel">
 
-                        <header class="panel-heading">
-                            <a href="banner.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
-                                    </span> BANNERS</button>
-                            </a>
+                        <header class="panel-heading">                            <a href="#myModal" data-toggle="modal" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> CRIAR ÁLBUM                            </a>							<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">                                  <div class="modal-dialog">                                      <div class="modal-content">                                          <div class="modal-header">                                              <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>                                              <h4 class="modal-title">CRIANDO ÁLBUM DE FOTOS</h4>                                          </div>                                          <div class="modal-body">                                              <form role="form">                                                  <div class="form-group">                                                      <label for="exampleInputEmail1">Nome do novo álbum</label>                                                      <input type="email" class="form-control" placeholder="nome do álbum">                                                  </div>                                                  <button type="submit" class="btn btn-default">CRIAR</button>                                              </form>                                          </div>                                      </div>                                  </div>                              </div>			
                         </header>
 
                         <div class="panel-body">
@@ -80,10 +76,9 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                 <table  class="display table table-bordered table-striped" id="example">
                                     <thead>
                                         <tr>
-                                            <th style="text-align: left;">BANNER</th>
-                                            <th style="text-align: center;">DATA</th>
+                                            <th style="text-align: left;">CAPA DO ÁLBUM</th>
+                                            <th style="text-align: left;">NOME DO ÁLBUM</th>                                            <th style="text-align: center;">Nº FOTOS</th>
                                             <th style="text-align: center;">POSTADO POR</th>
-                                            <th style="text-align: center;">PUBLICADO?</th>
                                             <th style="text-align: center;">EDITAR</th>
                                             <th style="text-align: center;">EXCLUIR</th>
 
@@ -92,27 +87,25 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                     <tbody>
 
                                         <?php
-                                        $seleciona_dados = "SELECT * FROM banner INNER JOIN
-                                                            usuario ON banner.usuario_id = usuario.usuario_id";
+                                        $seleciona_dados = "SELECT * FROM fotos INNER JOIN usuario
+                                                            ON fotos.usuario_id = usuario.usuario_id";
 
                                         $executa_seleciona_dados = mysql_query($seleciona_dados)or die(mysql_error());
 
-                                        while ($dados_array = mysql_fetch_array($executa_seleciona_dados)) {
+                                        while ($array_dados = mysql_fetch_array($executa_seleciona_dados)) {
                                             ?>
 
                                             <tr class="gradeA" style="text-align: center; vertical-align: center;">
                                                 <td style="text-align: left;">
-                                                    <a class="fancybox" rel="id_foto" href="imagens/banner/<?php echo $dados_array['img']; ?>">
-                                                        <img src="imagens/banner/<?php echo $dados_array['img']; ?>" height="100" alt="" />
+                                                    <a class="fancybox" rel="id_foto" href="imagens/fotos/<?php echo $array_dados['foto']; ?>" title="<?php echo $array_dados['legenda']; ?>">
+                                                        <img src="imagens/fotos/<?php echo $array_dados['foto']; ?>" height="100" alt="" />
                                                     </a>
                                                 </td>
-                                                <td><?php echo $dados_array['data_banner']; ?></td>
-                                                <td><?php echo $dados_array['nome']; ?></td>
-                                                <td><a href="#"><img src="img/sim.png" alt="" /></a></td>
-                                                <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
-                                                <td><a href="php/exclui_banner.php?id=<?php echo $dados_array['banner_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
+                                                <td style="text-align: left;"><a href="album_fotos.php">FESTA 01</a></td>                                                <td>34</td>
+                                                <td><?php echo $array_dados['nome']; ?></td>
+                                                <td><a href="album_fotos.php"><img src="img/editar.png" alt="" /></a></td>
+                                                <td><a href="php/exclui_fotos.php?id=<?php echo $array_dados['fotos_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
                                             </tr>
-
 
                                             <?php
                                         }
@@ -144,6 +137,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 <!--footer start-->
 <?php include './footer.php'; ?>
 <!--footer end-->
+
 
 <script type="text/javascript" language="javascript" src="assets/advanced-datatable/media/js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>

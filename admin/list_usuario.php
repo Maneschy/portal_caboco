@@ -63,7 +63,7 @@
                                 <table  class="display table table-bordered table-striped" id="example">
                                     <thead>
                                         <tr>
-                                            <th style="text-align: center;">NOME</th>
+                                            <th style="text-align: left;">NOME</th>
                                             <th style="text-align: center;">NIVEL</th>
                                             <th style="text-align: center;">EDITAR</th>
                                             <th style="text-align: center;">EXCLUIR</th>

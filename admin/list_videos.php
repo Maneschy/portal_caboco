@@ -1,12 +1,3 @@
-<?php
-session_start();
-if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == true)) {
-    unset($_SESSION['usuario']);
-    unset($_SESSION['senha']);
-    header('location:index.php');
-}
-?>
-
 <!--header end-->
 <?php include './header.php'; ?>
 <?php include './menu.php'; ?>
@@ -31,7 +22,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
     <section id="main-content">
         <section class="wrapper site-min-height">
 
-            <h1 style="font-weight: 300;"><span class="fa  fa-check-square-o"></span> OPINIÃO</h1>
+            <h1 style="font-weight: 300;"><span class="fa fa-video-camera"></span> GALERIA DE VÍDEOS</h1>
             <hr style="border: 1px solid #333;">
             <div class="divider"></div>
             <div class="divider"></div>
@@ -48,7 +39,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                         <button data-dismiss="alert" class="close close-sm" type="button">
                             <i class="fa fa-times"></i>
                         </button>
-                        <strong>SUCESSO!</strong> Opinião excluida com sucesso!
+                        <strong>SUCESSO!</strong> Vídeo excluído com sucesso!
                     </div>
                     <?php
                 }
@@ -56,14 +47,15 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
             ?>
 
 
+
+
             <div class="row">
                 <div class="col-lg-12">
 
                     <section class="panel">
-
                         <header class="panel-heading">
-                            <a href="opiniao.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
-                                    </span> OPINIÃO</button>
+                            <a href="videos.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                                    </span> vídeos</button>
                             </a>
                         </header>
 
@@ -72,10 +64,10 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                 <table  class="display table table-bordered table-striped" id="example">
                                     <thead>
                                         <tr>
-                                            <th style="text-align: left;">TITULO</th>
+                                            <th style="text-align: left;">VÍDEO</th>
+                                            <th style="text-align: left;">LEGENDA</th>
                                             <th style="text-align: center;">DATA</th>
                                             <th style="text-align: center;">POSTADO POR</th>
-                                            <th style="text-align: center;">PUBLICADO?</th>
                                             <th style="text-align: center;">EDITAR</th>
                                             <th style="text-align: center;">EXCLUIR</th>
 
@@ -83,48 +75,31 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                     </thead>
                                     <tbody>
 
-
                                         <?php
-                                        $seleciona = "SELECT * FROM opiniao INNER JOIN
-                                                      usuario ON opiniao.usuario_id = usuario.usuario_id";
+                                        $seleciona_dados = "SELECT * FROM videos INNER JOIN usuario ON videos.usuario_id = usuario.usuario_id";
 
-                                        $seleciona_executa = mysql_query($seleciona)or die(mysql_error());
+                                        $executa_seleciona_dados = mysql_query($seleciona_dados)or die(mysql_error());
 
-                                        while ($dados_array = mysql_fetch_array($seleciona_executa)) {
+                                        while ($array_dados = mysql_fetch_array($executa_seleciona_dados)) {
                                             ?>
 
-                                            <tr class="gradeA" style="text-align: center;">
-                                                <td style="text-align: left;"><?php echo $dados_array['titulo']; ?></td>
-                                                <td><?php echo $dados_array['data']; ?></td>
-                                                <td><?php echo $dados_array['nome']; ?></td>
-                                                <td>
-
-                                                    <?php
-                                                    if ($dados_array['publicar'] == 1) {
-                                                        ?>
-                                                        <img src="img/sim.png" alt="">
-                                                        <?php
-                                                    } else {
-                                                        ?>
-                                                        <img src="img/nao.png" alt="">
-                                                        <?php
-                                                    }
-                                                    ?>
-
-
+                                            <tr class="gradeA" style="text-align: center; vertical-align: center;">
+                                                <td style="text-align: left;">
+                                                    <iframe width="150" height="100" src="https://www.youtube.com/embed/<?php echo $array_dados['video'] ?>?wmode=transparent" allowfullscreen></iframe>
                                                 </td>
-
+                                                <td style="text-align: left; vertical-align: center;"><?php echo $array_dados['legenda']; ?></td>
+                                                <td><?php echo $array_dados['data_video']; ?></td>
+                                                <td><?php echo $array_dados['nome'] ?></td>
                                                 <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
-                                                <td><a href="php/exclui_opiniao.php?id=<?php echo $dados_array['opiniao_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
+                                                <td><a href="php/exclui_videos.php?id=<?php echo $array_dados['videos_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
                                             </tr>
+
 
                                             <?php
                                         }
                                         ?>
 
                                     </tbody>
-
-
                                 </table>
                             </div>
                         </div>

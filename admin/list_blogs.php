@@ -37,7 +37,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
     <section id="main-content">
         <section class="wrapper site-min-height">
 
-            <h1 style="font-weight: 300;"><span class="fa fa-video-camera"></span> GALERIA DE FOTOS</h1>
+            <h1 style="font-weight: 300;"><span class="fa fa-comments"></span> BLOGS</h1>
             <hr style="border: 1px solid #333;">
             <div class="divider"></div>
             <div class="divider"></div>
@@ -69,8 +69,8 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                     <section class="panel">
 
                         <header class="panel-heading">
-                            <a href="fotos.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
-                                    </span> fotos</button>
+                            <a href="blogs.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                                    </span> BLOGS</button>
                             </a>
                         </header>
 
@@ -80,8 +80,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                     <thead>
                                         <tr>
                                             <th style="text-align: left;">FOTO</th>
-                                            <th style="text-align: left;">LEGENDA</th>
-                                            <th style="text-align: center;">DATA</th>
+                                            <th style="text-align: center;">NOME DO BLOG</th>
                                             <th style="text-align: center;">POSTADO POR</th>
                                             <th style="text-align: center;">EDITAR</th>
                                             <th style="text-align: center;">EXCLUIR</th>
@@ -105,8 +104,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                                         <img src="imagens/fotos/<?php echo $array_dados['foto']; ?>" height="100" alt="" />
                                                     </a>
                                                 </td>
-                                                <td style="text-align: left;"><?php echo $array_dados['legenda']; ?></td>
-                                                <td><?php echo $array_dados['data_foto']; ?></td>
+                                                <td style="text-align: center;"><?php echo $array_dados['legenda']; ?></td>
                                                 <td><?php echo $array_dados['nome']; ?></td>
                                                 <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
                                                 <td><a href="php/exclui_fotos.php?id=<?php echo $array_dados['fotos_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>

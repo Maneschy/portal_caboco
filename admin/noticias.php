@@ -10,7 +10,7 @@
 <section id="main-content">
     <section class="wrapper">
 
-        <div class="col-lg-8">
+        <div class="col-lg-10">
             
                <?php
             if (isset($_GET['respt'])) {
@@ -93,7 +93,7 @@
                            	</div>
                         </div>                                                <a href="#"><div class="col-sm-6">+ clique para adicionar mais fotos</div></a>                                                <div class="form-group col-sm-12">                        	<hr/>                        </div>                                                <div class="form-group col-sm-6">                            <label for="exampleInputEmail1">CÓDIGO DO VÍDEO NO YOUTUBE</label>                            <div class="input-group">                                <span class="input-group-addon">https://www.youtube.com/watch?v=</span>                                <input name="codigo" tooltip="Poste o vídeo no youtube, copie o código de 11 dígitos gerado no link do vídeo após o sinal de igual (=), conforme o modelo abaixo" type="text" name="codigo" class="form-control" placeholder="1xq0gD-DIoc">                            </div>                        </div>                                                <div class=" form-group col-sm-5">                            <label for="exampleInputEmail1">LEGENDA DO VÍDEO</label>                            <textarea name="texto" id="" class="form-control" rows="1"></textarea>                        </div>                                                <div class="form-group col-sm-12">                        <hr/>                        	<label for="exampleInputEmail1">TAGs</label>                            <input name="tagsinput" id="tagsinput" class="tagsinput" value="Notícia" />                                                    </div>
 
-						<div class="form-group col-sm-12">
+												<div class="form-group col-sm-12">
                             	
                             	<hr/>                            	
                             	<label style="margin-right: 20px;" class="col-sm-3 col-sm-3">DESTAQUE no BANNER</label>
@@ -113,7 +113,7 @@
                                </div>
                                 
                                 <hr/>                                
-                         </div>
+                         </div>                         
 												<div class="form-group col-sm-12">
                         	<input type="submit" class="btn btn-primary" value="SALVAR"></input>
 						</div>						

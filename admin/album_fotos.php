@@ -1,3 +1,13 @@
+<?php
+session_start();
+if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == true)) {
+    unset($_SESSION['usuario']);
+    unset($_SESSION['senha']);
+    header('location:index.php');
+}
+?>
+
+
 <!--header end-->
 <?php include './header.php'; ?>
 <?php include './menu.php'; ?>
@@ -11,24 +21,28 @@
 <link href="assets/advanced-datatable/media/css/demo_page.css" rel="stylesheet" />
 <link href="assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />
 <link rel="stylesheet" href="assets/data-tables/DT_bootstrap.css" />
+
+<link href="assets/fancybox/source/jquery.fancybox.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="css/gallery.css" />
+
 <!-- Custom styles for this template -->
 <link href="css/style.css" rel="stylesheet">
 <link href="css/style-responsive.css" rel="stylesheet" />
-
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
 
 </br></br>
-<section id="container" class="" >
+<section id="container" class="">
 
     <section id="main-content">
         <section class="wrapper site-min-height">
 
-            <h1 style="font-weight: 300;"><span class="fa  fa-globe"></span> LINKS ÚTEIS</h1>
+            <h1 style="font-weight: 300;"><span class="fa fa-video-camera"></span> ÁLBUM: Nome do álbum</h1>
             <hr style="border: 1px solid #333;">
             <div class="divider"></div>
             <div class="divider"></div>
 
             </br>
-
             <?php
             if (isset($_GET['respt'])) {
 
@@ -39,12 +53,13 @@
                         <button data-dismiss="alert" class="close close-sm" type="button">
                             <i class="fa fa-times"></i>
                         </button>
-                        <strong>SUCESSO!</strong> Link excluido com sucesso!
+                        <strong>SUCESSO!</strong> Foto excluída com sucesso!
                     </div>
                     <?php
                 }
             }
             ?>
+
 
 
 
@@ -54,8 +69,8 @@
                     <section class="panel">
 
                         <header class="panel-heading">
-                            <a href="links.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
-                                    </span> LINKS</button>
+                            <a href="fotos.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                                    </span> fotos neste álbum</button>
                             </a>
                         </header>
 
@@ -64,45 +79,40 @@
                                 <table  class="display table table-bordered table-striped" id="example">
                                     <thead>
                                         <tr>
-                                            <th>NOME DO LINK</th>
+                                            <th style="text-align: left;">FOTO</th>
+                                            <th style="text-align: left;">LEGENDA</th>
+                                            <th style="text-align: center;">DATA</th>
                                             <th style="text-align: center;">POSTADO POR</th>
-                                            <th style="text-align: center;">EDITAR</th>
                                             <th style="text-align: center;">EXCLUIR</th>
-
 
                                         </tr>
                                     </thead>
-
-
                                     <tbody>
 
                                         <?php
-                                        $sql_seleciona = "SELECT links.nome as link, usuario.nome as usuario, links_id FROM links INNER JOIN
-                                                         usuario ON links.usuario_id = usuario.usuario_id";
+                                        $seleciona_dados = "SELECT * FROM fotos INNER JOIN usuario
+                                                            ON fotos.usuario_id = usuario.usuario_id";
 
-                                        $executa_sql_selecinona = mysql_query($sql_seleciona)or die(mysql_error());
+                                        $executa_seleciona_dados = mysql_query($seleciona_dados)or die(mysql_error());
 
-                                        while ($array_dados = mysql_fetch_array($executa_sql_selecinona)) {
+                                        while ($array_dados = mysql_fetch_array($executa_seleciona_dados)) {
                                             ?>
 
-                                            <tr class="gradeA">
-                                                <td><?php echo $array_dados['link'] ?></td>
-                                                <td style="text-align: center;"><?php echo $array_dados['usuario'] ?></td>
-                                                <td style="text-align: center;"><a href="#"><img src="img/editar.png" alt="" /></a></td>
-                                                <td style="text-align: center;"><a href="php/exclui_link.php?id=<?php echo $array_dados['links_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
-
-
+                                            <tr class="gradeA" style="text-align: center; vertical-align: center;">
+                                                <td style="text-align: left;">
+                                                    <a class="fancybox" rel="id_foto" href="imagens/fotos/<?php echo $array_dados['foto']; ?>" title="<?php echo $array_dados['legenda']; ?>">
+                                                        <img src="imagens/fotos/<?php echo $array_dados['foto']; ?>" height="100" alt="" />
+                                                    </a>
+                                                </td>
+                                                <td style="text-align: left;"><?php echo $array_dados['legenda']; ?></td>
+                                                <td><?php echo $array_dados['data_foto']; ?></td>
+                                                <td><?php echo $array_dados['nome']; ?></td>
+                                                <td><a href="php/exclui_fotos.php?id=<?php echo $array_dados['fotos_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
                                             </tr>
 
                                             <?php
                                         }
                                         ?>
-
-
-
-
-
-
 
                                     </tbody>
                                 </table>
@@ -118,7 +128,14 @@
 
 </section>
 
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
 
+
+    </section>
+</section>
+<!--main content end-->
 
 <!--footer start-->
 <?php include './footer.php'; ?>
@@ -128,6 +145,7 @@
 <script type="text/javascript" language="javascript" src="assets/advanced-datatable/media/js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="assets/fancybox/source/jquery.fancybox.js"></script>
 <script src="js/jquery.scrollTo.min.js"></script>
 <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
 <script type="text/javascript" language="javascript" src="assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
@@ -146,6 +164,13 @@
             "aaSorting": [[4, "desc"]]
         });
     });
+</script>
+<script type="text/javascript">
+    $(function () {
+        //    fancybox
+        jQuery(".fancybox").fancybox();
+    });
+
 </script>
 
 </body>

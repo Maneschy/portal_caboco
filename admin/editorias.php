@@ -10,7 +10,7 @@
 <section id="main-content">
     <section class="wrapper">
 
-        <div class="col-lg-8">
+        <div class="col-lg-10">
             
                <?php
             if (isset($_GET['respt'])) {
@@ -35,16 +35,16 @@
                 <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> CADASTRO DE SUB-EDITORIAS</strong></div>
                 <div class="panel-body">
 
-                    <form role="form" action="php/salva_noticia.php" method="POST" enctype='multipart/form-data'>
-						                        <div class="form-group col-lg-12">                        	<label for="exampleInputEmail1">ESCOLHA A EDITORIA</label>                                <select name="tipo_arquivo" class="form-control m-bot15">                                    <option>NOTÍCIAS</option>                                    <option>ESPORTES</option>                                    <option>ENTRETENIMENTO</option>                                    <option>AMAZÔNIA</option>                                    <option>POLÍCIA</option>                                    <option>CULTURA</option>                                    <option>RELIGIÃO</option>                                </select>                        </div>                        
+                    <form role="form" class=" form-validation" action="php/salva_noticia.php" data-ng-submit="submitForm()" method="POST" enctype='multipart/form-data'>
+						                        <div class="form-group col-lg-12">                        	<label for="exampleInputEmail1">ESCOLHA A EDITORIA</label>                                <select data-ng-model="sub.editoria" required name="tipo_arquivo" class="form-control m-bot15">                                    <option>NOTÍCIAS</option>                                    <option>ESPORTES</option>                                    <option>ENTRETENIMENTO</option>                                    <option>AMAZÔNIA</option>                                    <option>POLÍCIA</option>                                    <option>CULTURA</option>                                    <option>RELIGIÃO</option>                                </select>                        </div>                        
                         <div class="form-group col-sm-12">
                             <label for="exampleInputEmail1">NOVA SUB-EDITORIA</label>
-                            <input name="titulo" tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" name="titulo" type="text" class="form-control" data-placement="top">
+                            <input                             	data-ng-model="sub.nova"                             	required                             	name="titulo"                             	tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS"                             	name="titulo"                             	type="text"                             	class="form-control"                             	data-placement="top">
                         </div>
 
 
 
-                        <div class="form-group col-sm-12">                        	<input type="submit" class="btn btn-primary" value="SALVAR"></input>                        </div>
+                        <div class="form-group col-sm-12">                        	<input data-ng-disabled="!canSubmit()" type="submit" class="btn btn-primary " value="SALVAR"></input>                        </div>
 
                     </form>
 

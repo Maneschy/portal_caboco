@@ -17,18 +17,17 @@
 
 
 </br></br>
-<section id="container" class="">
+<section id="container" class="" >
 
     <section id="main-content">
         <section class="wrapper site-min-height">
 
-            <h1 style="font-weight: 300;"><span class="fa fa-camera-retro"></span> DEP. NA MÍDIA • CLIPPING</h1>
+            <h1 style="font-weight: 300;"><span class="fa  fa-globe"></span> SUB-EDITORIAS</h1>
             <hr style="border: 1px solid #333;">
             <div class="divider"></div>
             <div class="divider"></div>
 
             </br>
-
 
             <?php
             if (isset($_GET['respt'])) {
@@ -40,12 +39,13 @@
                         <button data-dismiss="alert" class="close close-sm" type="button">
                             <i class="fa fa-times"></i>
                         </button>
-                        <strong>SUCESSO!</strong> Mídia excluida com sucesso!
+                        <strong>SUCESSO!</strong> Link excluido com sucesso!
                     </div>
                     <?php
                 }
             }
             ?>
+
 
 
             <div class="row">
@@ -54,8 +54,8 @@
                     <section class="panel">
 
                         <header class="panel-heading">
-                            <a href="depmidia.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
-                                    </span> CLIPPING</button>
+                            <a href="editorias.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                                    </span> SUB-EDITORIA</button>
                             </a>
                         </header>
 
@@ -64,36 +64,35 @@
                                 <table  class="display table table-bordered table-striped" id="example">
                                     <thead>
                                         <tr>
-                                            <th style="text-align: left;">TITULO</th>
-                                            <th style="text-align: center;">DATA</th>
+                                            <th>SUB-EDITORIA</th>                                            <th style="text-align: center;">EDITORIA</th>
                                             <th style="text-align: center;">POSTADO POR</th>
                                             <th style="text-align: center;">EDITAR</th>
                                             <th style="text-align: center;">EXCLUIR</th>
 
+
                                         </tr>
                                     </thead>
+
+
                                     <tbody>
 
-
                                         <?php
-                                        $seleciona = "SELECT * FROM depmidia INNER JOIN
-                                                      usuario ON usuario.usuario_id = depmidia.usuario_id";
+                                        $sql_seleciona = "SELECT links.nome as link, usuario.nome as usuario, links_id FROM links INNER JOIN
+                                                         usuario ON links.usuario_id = usuario.usuario_id";
 
-                                        $seleciona_executa = mysql_query($seleciona)or die(mysql_error());
+                                        $executa_sql_selecinona = mysql_query($sql_seleciona)or die(mysql_error());
 
-                                        while ($array_dados = mysql_fetch_array($seleciona_executa)) {
+                                        while ($array_dados = mysql_fetch_array($executa_sql_selecinona)) {
                                             ?>
 
+                                            <tr class="gradeA">
+                                                <td><?php echo $array_dados['link'] ?></td>                                                <td style="text-align: center;">ENTRETENIMENTO</td>
+                                                <td style="text-align: center;"><?php echo $array_dados['usuario'] ?></td>
+                                                <td style="text-align: center;"><a href="#"><img src="img/editar.png" alt="" /></a></td>
+                                                <td style="text-align: center;"><a href="php/exclui_link.php?id=<?php echo $array_dados['links_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
 
-                                            <tr class="gradeA" style="text-align: center;">
-                                                <td style="text-align: left;"><?php echo $array_dados['titulo']; ?></td>
-                                                <td><?php echo $array_dados['data']; ?></td>
-                                                <td><?php echo $array_dados['nome']; ?></td>
 
-                                                <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
-                                                <td><a href="php/exclui_depmidia.php?id=<?php echo $array_dados['depmidia_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
                                             </tr>
-
 
                                             <?php
                                         }
@@ -102,8 +101,10 @@
 
 
 
-                                    </tbody>
 
+
+
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -117,14 +118,7 @@
 
 </section>
 
-<!--main content start-->
-<section id="main-content">
-    <section class="wrapper">
 
-
-    </section>
-</section>
-<!--main content end-->
 
 <!--footer start-->
 <?php include './footer.php'; ?>
