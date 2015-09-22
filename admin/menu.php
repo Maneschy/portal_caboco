@@ -8,7 +8,7 @@
                     <i class="fa fa-dashboard"></i>
                     <span>Dashboard</span>
                 </a>
-            </li>						<li>			    <a  href="list_editorias.php">			        <i class="fa fa-camera-retro"></i>			        <span>Sub-editorias</span>			    </a>			</li>						<li>			    <a  href="list_noticias.php">			        <i class="fa fa-list-alt "></i>			        <span>Notícias</span>			    </a>			</li>						
+            </li>						<li>			    <a  href="list_editorias.php">			        <i class="fa fa-pencil-square"></i>			        <span>Sub-editorias</span>			    </a>			</li>						<li>			    <a  href="list_noticias.php">			        <i class="fa fa-list-alt "></i>			        <span>Notícias</span>			    </a>			</li>						
             <li>
                 <a href="list_blogs.php">
                     <i class="fa fa-comments"></i>
